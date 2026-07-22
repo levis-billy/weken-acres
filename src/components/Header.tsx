@@ -11,6 +11,22 @@ const navLinks = [
   { href: "#request", label: "Contact" },
 ];
 
+function MenuIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+      <path d="M6 6l12 12M18 6 6 18" />
+    </svg>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
 
@@ -51,18 +67,9 @@ export function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-10 w-10 items-center justify-center text-[#16202B] md:hidden"
         >
-          <span
-            className={`h-[1.5px] w-6 bg-[#16202B] transition-transform ${
-              open ? "translate-y-[3.5px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-[1.5px] w-6 bg-[#16202B] transition-transform ${
-              open ? "-translate-y-[3.5px] -rotate-45" : ""
-            }`}
-          />
+          {open ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
 
