@@ -1,1 +1,2 @@
-export const basePath = "/weken-acres";
+export const basePath =
+  process.env.NODE_ENV === "production" ? "/weken-acres" : "";
