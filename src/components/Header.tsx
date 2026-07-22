@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { basePath } from "@/lib/base-path";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -12,7 +13,7 @@ export function Header() {
     <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-6 border-b border-[#E4E0D8] bg-[#FAF8F4]/94 px-5 py-0 backdrop-blur-sm sm:px-8">
       <a href="#top" className="flex items-center">
         <Image
-          src="/weken-acres-logo.svg"
+          src={`${basePath}/weken-acres-logo.svg`}
           alt="Weken Acres Properties & Consultancy Limited"
           height={200}
           width={200}
